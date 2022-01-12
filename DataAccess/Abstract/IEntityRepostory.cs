@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IEntityRepostory<T>
-    {
-        //Using Generics <T> is a generic name of anything;
+    //Using Generics <T> is a generic name of anything;
+    //Generic Constraint
+    //class referance type
+    //IEntitiy: It must Be Ientitiy or implemented IEntitiy
+    //new: it must be newed
+
+
+    public interface IEntityRepostory<T> where T:class,IEntity, new()
+    {        
         List<T> GetAll(Expression<Func<T,bool>> filter=null); // = for writing filters 
         T Get(Expression<Func<T, bool>> filter);
 
