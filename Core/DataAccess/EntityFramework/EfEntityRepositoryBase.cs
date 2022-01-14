@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Abstract
+namespace Core.DataAccess.EntityFramework
 {
-    //IEntity Implemented class is database tabe
-    public interface IEntity
+    public class EfEntityRepositoryBase<TEntity, TContex>
     {
 
     }
