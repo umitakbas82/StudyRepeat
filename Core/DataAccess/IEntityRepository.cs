@@ -15,7 +15,7 @@ namespace Core.DataAccess
     //new: it must be newed
 
 
-    public interface IEntityRepostory<T> where T:class,IEntity, new()
+    public interface IEntityRepository<T> where T:class,IEntity, new()
     {        
         List<T> GetAll(Expression<Func<T,bool>> filter=null); // = for writing filters 
         T Get(Expression<Func<T, bool>> filter);
